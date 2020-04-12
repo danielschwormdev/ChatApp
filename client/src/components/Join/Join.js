@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import "./Join.css";
 
 export default function SignIn() {
-  const [name, setName] = useState('');
-  const [room, setRoom] = useState('');
+  // setName wird in den leeren String useState geschrieben
+  // initialisiert mit einem leeren String
+  const [name, setName] = useState("");
+  const [room, setRoom] = useState("");
 
   return (
     <div className="joinOuterContainer">
       <div className="joinInnerContainer">
-        <h1 className="heading">Join</h1>
+        <h1 className="heading">Chat App</h1>
         <div>
           <input
             placeholder="Name"
@@ -21,7 +23,7 @@ export default function SignIn() {
         </div>
         <div>
           <input
-            placeholder="Room"
+            placeholder="Raum"
             className="joinInput mt-20"
             type="text"
             onChange={event => setRoom(event.target.value)}
@@ -32,7 +34,7 @@ export default function SignIn() {
           to={`/chat?name=${name}&room=${room}`}
         >
           <button className={"button mt-20"} type="submit">
-            Sign In
+            Einloggen
           </button>
         </Link>
       </div>
